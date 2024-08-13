@@ -1,10 +1,10 @@
 <!doctype html>
 <html>
 <head>
-    <title>Fórum Simples</title>
+    <title>associação de moradores de Biguaçu</title>
 </head>
 <body>
-    <h1>Fórum Simples</h1>
+    <h1>associação de moradores de Biguaçu</h1>
     <ul>
         {% for topic in topics %}
             <li><a href="{{ url_for('topic', topic_id=topic.id) }}">{{ topic.title }}</a></li>
