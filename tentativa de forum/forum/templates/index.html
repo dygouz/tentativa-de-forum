@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+    <title>Fórum Simples</title>
+</head>
+<body>
+    <h1>Fórum Simples</h1>
+    <ul>
+        {% for topic in topics %}
+            <li><a href="{{ url_for('topic', topic_id=topic.id) }}">{{ topic.title }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('create') }}">Criar Novo Tópico</a>
+</body>
+</html>

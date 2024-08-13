@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+    <title>{{ topic.title }}</title>
+</head>
+<body>
+    <h1>{{ topic.title }}</h1>
+    <p>{{ topic.content }}</p>
+    <h2>Comentários</h2>
+    <ul>
+        {% for comment in topic.comments %}
+            <li>{{ comment.content }}</li>
+        {% endfor %}
+    </ul>
+    <form action="{{ url_for('comment', topic_id=topic.id) }}" method="post">
+        <textarea name="content"></textarea>
+        <br>
+        <button type="submit">Adicionar Comentário</button>
+    </form>
+    <a href="{{ url_for('index') }}">Voltar</a>
+</body>
+</html>
